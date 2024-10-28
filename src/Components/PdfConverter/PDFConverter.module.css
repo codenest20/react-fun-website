@@ -1,4 +1,4 @@
-/* src/components/PDFConverter.module.css */
+
 .container {
   max-width: 600px;
   margin: 50px auto;
@@ -48,7 +48,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: #ffffff;
-  background-color: #2980b9;
+  background-color: rgb(128, 0, 255);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -57,5 +57,5 @@
 }
 
 .button:hover {
-  background-color: #1c5983;
+  background-color: rgb(113, 64, 162);
 }

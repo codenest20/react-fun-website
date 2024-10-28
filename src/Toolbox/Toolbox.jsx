@@ -33,6 +33,13 @@ export default function Toolbox() {
           btnName="Open Unit Converter"
           clickBtn={() => navigate("/unitconverter")} 
         />
+
+        <ToolboxContainer
+          title="PDF Converter"
+          desc="Convert Your Input Text Into PDF"
+          btnName="Open PDF Converter"
+          clickBtn={() => navigate("/pdf-converter")} 
+        />
       </div>
     </div>
   );
