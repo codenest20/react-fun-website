@@ -55,6 +55,13 @@ export default function Toolbox() {
           clickBtn={() => navigate("/password-generator")} 
         />
 
+        <ToolboxContainer
+          title="Rock Scissor Paper"
+          desc="You can Play Rock Scissor Paper game"
+          btnName="Open Rock Scissor Paper game"
+          clickBtn={() => navigate("/rock-scissor-paper")} 
+        />
+
 
       </div>
     </div>
