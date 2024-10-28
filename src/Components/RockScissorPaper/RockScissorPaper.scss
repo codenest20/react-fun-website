@@ -1,65 +1,101 @@
+/* RockScissorPaper.scss */
+
 .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
-  background-color: #f7f7f7;
-  border: 2px solid #333;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 400px;
-  margin: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 450px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
 
   h1 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    color: #333333;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
   }
 
   .choices {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.5rem;
 
     button {
       background: none;
-      border: none;
+      border: grey solid 1px;
       cursor: pointer;
-      padding: 10px;
+      padding: 12px;
       border-radius: 50%;
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.15);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
 
       img {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
       }
     }
   }
 
   .result {
-    margin-top: 20px;
-    
+    margin-top: 2rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
     h2 {
-      margin: 10px 0;
-      font-size: 1.2em;
+      margin: 0.5rem 0;
+      font-size: 1.3em;
+      color: #666666;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       img {
         vertical-align: middle;
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
+        margin-left: 8px;
       }
     }
 
     h3 {
-      color: #007700;
-      font-size: 1.5em;
-      margin-top: 10px;
+      color: #4caf50;
+      font-size: 1.6em;
+      margin-top: 1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+
+      &.win {
+        color: #4caf50;
+      }
+
+      &.lose {
+        color: #f44336;
+      }
+
+      &.tie {
+        color: #ffa000;
+      }
     }
   }
 }
