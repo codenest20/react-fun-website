@@ -22,6 +22,7 @@ import Toolbox from "./Toolbox/Toolbox";
 import Weather from "./Components/Weather/Weather";
 import UnitConverter from "./Components/UnitConverter/UnitConverter";
 import PDFConverter from "./Components/PdfConverter/PDFConverter";
+import Form from "./Components/ToDoApp/Form";
 
 export const myContext = createContext();
 
@@ -129,6 +130,10 @@ function App() {
         {
           path : "/pdf-converter",
           element : <PDFConverter />,
+        },
+        {
+          path : "/todo",
+          element : <Form />,
         },
         {
           path: "*",

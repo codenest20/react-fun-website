@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
-import "../style/Form.css";
 import Data from "./Data";
+import styles from "./Form.module.css";
 
 function Form() {
   const [todo, setTodo] = useState("");
@@ -10,7 +10,7 @@ function Form() {
 
   function addData() {
     if (todo && date) {
-      let newArray = [...array, { todo, date }];
+      const newArray = [...array, { todo, date }];
       setArray(newArray);
       setDate("");
       setTodo("");
@@ -18,52 +18,40 @@ function Form() {
   }
 
   function deleteData(index) {
-    const newArray = array.filter((_, i) => i != index);
+    const newArray = array.filter((_, i) => i !== index);
     setArray(newArray);
   }
 
   return (
-    <>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-sm-6">
-            <input
-              type="text"
-              className="form-control"
-              id=""
-              placeholder="Enter To Do"
-              value={todo}
-              onChange={(e) => setTodo(e.target.value)}
-            />
-          </div>
-          <div class="col-sm-4">
-            <input
-              type="date"
-              className="form-control"
-              id=""
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </div>
-          <div class="col-sm-2">
-            <Button tags="success" title="Add" clickButton={addData} />
-          </div>
-        </div>
+    <div className={styles.container}>
+      <div className={styles.row}>
+        <input
+          type="text"
+          className={styles.formControl}
+          placeholder="Enter To Do"
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+        />
+        <input
+          type="date"
+          className={styles.date}
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <Button tags="success" title="Add" clickButton={addData} className={styles.button} />
       </div>
 
-      {array.map((item, index) => {
-        return (
+      <ul className={styles.dataList}>
+        {array.map((item, index) => (
           <Data
             key={index}
             todo={item.todo}
             date={item.date}
-            clickButton={() => {
-              deleteData(index);
-            }}
+            clickButton={() => deleteData(index)}
           />
-        );
-      })}
-    </>
+        ))}
+      </ul>
+    </div>
   );
 }
 
