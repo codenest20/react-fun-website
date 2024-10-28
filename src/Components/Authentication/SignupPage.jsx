@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Css/SignupPage.css";
+import styles from "./Css/SignupPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -7,6 +7,7 @@ const keyName = "signupData";
 
 const SignupPage = () => {
   const navigate = useNavigate();
+
   const initialData = {
     firstName: "",
     lastName: "",
@@ -58,13 +59,12 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-form">
+    <div className={styles.signupContainer}>
+      <div className={styles.signupForm}>
         <h1>Create Your Account</h1>
         <form onSubmit={signupClick}>
           {Object.entries(inputData).map(([key, value]) => (
-            <div className="form-group" key={key}>
-              <label htmlFor={key}>{key.replace(/([A-Z])/g, " $1")}</label>
+            <div className={styles.formGroup} key={key}>
               <input
                 type={key.includes("password") ? "password" : "text"}
                 name={key}
@@ -76,12 +76,12 @@ const SignupPage = () => {
               />
             </div>
           ))}
-          <button type="submit" className="signup-btn">
+          <button type="submit" className={styles.signupBtn}>
             Sign Up
           </button>
-          <div className="account-already">
+          <div className={styles.accountAlready}>
             <p>Already Have an Account?</p>
-            <Link className="login" to="/login">
+            <Link className={styles.login} to="/login">
               Login
             </Link>
           </div>
