@@ -24,6 +24,7 @@ import UnitConverter from "./Components/UnitConverter/UnitConverter";
 import PDFConverter from "./Components/PdfConverter/PDFConverter";
 import Form from "./Components/ToDoApp/Form";
 import PasswordGenerator from "./Components/PasswordGenerator/PasswordGenerator";
+import RockScissorPaper from "./Components/RockScissorPaper/RockScissorPaper";
 
 export const myContext = createContext();
 
@@ -139,6 +140,10 @@ function App() {
         {
           path : "password-generator",
           element : <PasswordGenerator />,
+        },
+        {
+          path : "rock-scissor-paper",
+          element : <RockScissorPaper />,
         },
         {
           path: "*",
