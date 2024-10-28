@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from "./Css/SignupPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -59,12 +58,12 @@ const SignupPage = () => {
   };
 
   return (
-    <div className={styles.signupContainer}>
-      <div className={styles.signupForm}>
-        <h1>Create Your Account</h1>
+    <div className="flex justify-center items-center h-screen w-full bg-gray-100 p-8">
+      <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-md">
+        <h1 className="text-center mb-4 text-purple-600 text-2xl font-bold">Create Your Account</h1>
         <form onSubmit={signupClick}>
           {Object.entries(inputData).map(([key, value]) => (
-            <div className={styles.formGroup} key={key}>
+            <div className="mb-3" key={key}>
               <input
                 type={key.includes("password") ? "password" : "text"}
                 name={key}
@@ -73,15 +72,19 @@ const SignupPage = () => {
                 placeholder={`Enter ${key.replace(/([A-Z])/g, " $1")}`}
                 onChange={handleInput}
                 required
+                className="w-full h-10 px-3 border-2 border-gray-300 rounded focus:outline-none focus:border-purple-600 text-center"
               />
             </div>
           ))}
-          <button type="submit" className={styles.signupBtn}>
+          <button
+            type="submit"
+            className="w-full py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition duration-300"
+          >
             Sign Up
           </button>
-          <div className={styles.accountAlready}>
+          <div className="flex justify-center mt-4">
             <p>Already Have an Account?</p>
-            <Link className={styles.login} to="/login">
+            <Link className="ml-1 text-blue-500 font-bold" to="/login">
               Login
             </Link>
           </div>
