@@ -16,6 +16,7 @@ const PasswordGenerator = () => {
   };
 
   return (
+    <div className={styles["main-container"]}>
     <div className={styles.container}>
       <h1>Password Generator</h1>
       <div className={styles.password}>{password || 'Your password will appear here'}</div>
@@ -25,6 +26,7 @@ const PasswordGenerator = () => {
       <button className={styles.button} onClick={() => generatePassword(16)}>
         Generate 16-Character Password
       </button>
+    </div>
     </div>
   );
 };
