@@ -23,6 +23,7 @@ function Form() {
   }
 
   return (
+    <div className={styles["main-container"]}>
     <div className={styles.container}>
       <div className={styles.row}>
         <input
@@ -51,6 +52,7 @@ function Form() {
           />
         ))}
       </ul>
+    </div>
     </div>
   );
 }

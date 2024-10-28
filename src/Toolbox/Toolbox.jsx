@@ -48,6 +48,13 @@ export default function Toolbox() {
           clickBtn={() => navigate("/todo")} 
         />
 
+        <ToolboxContainer
+          title="Password Generator"
+          desc="You can generate password for U"
+          btnName="Open Password Generator"
+          clickBtn={() => navigate("/password-generator")} 
+        />
+
 
       </div>
     </div>
