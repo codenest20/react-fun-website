@@ -21,6 +21,7 @@ import Calculator from "./Components/Calculator/Calculator";
 import Toolbox from "./Toolbox/Toolbox";
 import Weather from "./Components/Weather/Weather";
 import UnitConverter from "./Components/UnitConverter/UnitConverter";
+import PDFConverter from "./Components/PdfConverter/PDFConverter";
 
 export const myContext = createContext();
 
@@ -124,6 +125,10 @@ function App() {
         {
           path : "/unitconverter",
           element : <UnitConverter />,
+        },
+        {
+          path : "/pdf-converter",
+          element : <PDFConverter />,
         },
         {
           path: "*",
