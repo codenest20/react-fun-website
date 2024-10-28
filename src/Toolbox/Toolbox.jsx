@@ -40,6 +40,15 @@ export default function Toolbox() {
           btnName="Open PDF Converter"
           clickBtn={() => navigate("/pdf-converter")} 
         />
+
+        <ToolboxContainer
+          title="ToDo App"
+          desc="Your Own Todo App"
+          btnName="Open ToDo App"
+          clickBtn={() => navigate("/todo")} 
+        />
+
+
       </div>
     </div>
   );
