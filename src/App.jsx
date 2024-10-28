@@ -23,6 +23,7 @@ import Weather from "./Components/Weather/Weather";
 import UnitConverter from "./Components/UnitConverter/UnitConverter";
 import PDFConverter from "./Components/PdfConverter/PDFConverter";
 import Form from "./Components/ToDoApp/Form";
+import PasswordGenerator from "./Components/PasswordGenerator/PasswordGenerator";
 
 export const myContext = createContext();
 
@@ -134,6 +135,10 @@ function App() {
         {
           path : "/todo",
           element : <Form />,
+        },
+        {
+          path : "password-generator",
+          element : <PasswordGenerator />,
         },
         {
           path: "*",
