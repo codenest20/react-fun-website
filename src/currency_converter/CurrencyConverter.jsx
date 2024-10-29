@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { GoArrowSwitch } from "react-icons/go";
 import { toast } from "react-toastify";
+import "./CurrencyConverter.scss";
 
 export default function CurrencyConverter() {
   const currencyApiUrl = "https://api.frankfurter.app/currencies";
@@ -53,7 +54,7 @@ export default function CurrencyConverter() {
     const newFromCurrency = fromCurrencyRef.current.value;
     const newToCurrency = toCurrencyRef.current.value;
 
-    // Validate input data
+    
     if (!inputData) {
       toast.error("Input field should not be empty!");
       return;
@@ -65,10 +66,10 @@ export default function CurrencyConverter() {
       return;
     }
 
-    // Set currencies and call conversion
+    
     setFromCurrency(newFromCurrency);
     setToCurrency(newToCurrency);
-    convertHandle(); // Call conversion after validations
+    convertHandle(); 
   };
 
   const changeCurrency = () => {
@@ -126,7 +127,7 @@ export default function CurrencyConverter() {
             className="text-white hover:text-pink-300 transition-colors duration-300 transform hover:scale-110"
             onClick={changeCurrency}
           >
-            <GoArrowSwitch className="text-5xl" />
+            <GoArrowSwitch className="text-5xl" id="reverse-icon" />
           </button>
         </div>
 
@@ -148,8 +149,9 @@ export default function CurrencyConverter() {
 
       <div id="convert-button" className="w-full flex justify-center mb-6">
         <button
-          className="px-8 py-3 bg-white text-pink-500 font-bold rounded-full shadow-xl hover:bg-pink-500 hover:text-white hover:scale-105 transition-all duration-300 transform focus:ring-4 focus:ring-white"
+          className="px-8 py-3 bg-white text-pink-500 font-bold rounded-full shadow-xl hover:bg-pink-500 hover:text-black hover:scale-105 transition-all duration-300 transform focus:ring-4 focus:ring-white"
           onClick={convertCurrency}
+          id="button"
         >
           Convert
         </button>
@@ -157,7 +159,7 @@ export default function CurrencyConverter() {
 
       <div id="amount" className="text-2xl font-semibold text-white mt-4">
         {convertedValue && inputData && (
-          <p className="bg-white bg-opacity-20 px-4 py-2 rounded-full shadow-lg">
+          <p className="bg-white bg-opacity-20 px-5 rounded-full shadow-lg text-green-700 font-bold text-xl py-3">
             Converted Amount: {convertedValue.toFixed(2)} {toCurrency}
           </p>
         )}
