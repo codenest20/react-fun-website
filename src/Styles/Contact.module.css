@@ -25,6 +25,7 @@
   font-size: 36px;
   margin-bottom: 20px;
   color: white;
+  font-weight: bold;
 }
 
 .heroSection p {
@@ -112,6 +113,10 @@
   }
 }
 
+
+.name-box{
+  width: 50%;
+}
 
 .contact-input{
   width: 50% !important ; 
