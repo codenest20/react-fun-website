@@ -23,7 +23,7 @@ export default function Services() {
       </section>
 
       <section className={styles.featuresSection}>
-        <h2 className={styles.boldText}>What We Offer</h2>
+        <h2 className={styles.boldText} id={styles["offer-text"]}>What We Offer</h2>
         <div className={styles.featuresGrid}>
           <div className={styles.featureItem}>
             <h3 className={styles.boldText}>Consulting Services</h3>
