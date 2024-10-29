@@ -29,6 +29,7 @@ const PDFConverter = () => {
       <input
         type="text"
         className={styles.input}
+        id={styles["text-field"]}
         placeholder="Enter text to convert to PDF"
         value={text}
         onChange={(e) => setText(e.target.value)}

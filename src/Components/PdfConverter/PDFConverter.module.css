@@ -59,3 +59,28 @@
 .button:hover {
   background-color: rgb(113, 64, 162);
 }
+
+
+.input {
+  width: 80% !important ; 
+  height: 50px !important ;
+  font-size: 20px !important;
+  text-align: center !important;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content{
+  width: 80% !important;
+}
+
+
+#text-field{
+  height: 150px  !important;
+  text-align:center !important;
+}
