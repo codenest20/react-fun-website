@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="home-container">
       <div className="hero-section">
-        <h2>Welcome to Our Home Page</h2>
+        <h2>Welcome to CODENEST</h2>
         <p>
           Start your journey here. Discover our diverse range of services and
           resources to help you achieve more.

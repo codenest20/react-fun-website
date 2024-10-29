@@ -1,3 +1,7 @@
+:root{
+  --main-color : rgb(128, 0, 255);
+}
+
 /* General Container Styles */
 .contactContainer {
   max-width: 1200px;
@@ -105,4 +109,43 @@
   .ctaButton {
     width: 100%;
   }
+}
+
+
+.contact-input{
+  width: 50% !important ; 
+  height: 50px !important ;
+  font-size: 20px !important;
+  text-align: center !important;
+}
+
+.contact-input:focus{
+  outline: none !important;
+  border: 2px solid var(--main-color) !important;
+}
+
+.heroSection > form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.heroSection > form > .name-box{
+  display: flex;
+  gap: 10px;
+}
+
+.heroSection > form > textarea{
+  width: 50% !important ; 
+  height: 150px !important ;
+  font-size: 20px !important;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.heroSection > form > textarea:focus{
+  outline: none;
+  border: 2px solid var(--main-color);
 }
