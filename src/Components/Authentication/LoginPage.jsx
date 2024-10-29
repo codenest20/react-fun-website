@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading state
+    setLoading(true); 
     const user = localData.find(
       (user) => user.email === email && user.password === password
     );
@@ -24,7 +24,7 @@ const LoginPage = () => {
     } else {
       toast.error("Invalid Credentials");
     }
-    setLoading(false); // End loading state
+    setLoading(false); 
   };
 
   return (
