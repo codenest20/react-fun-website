@@ -9,7 +9,6 @@ export default function Toolbox() {
 
   return (
     <div className={styles.toolboxContainer}>
-      <h1 className={styles.toolboxTitle}>Toolbox</h1>
 
       <div className={styles.toolsSection}>
         <ToolboxContainer

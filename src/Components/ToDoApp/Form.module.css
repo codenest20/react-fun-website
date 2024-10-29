@@ -5,7 +5,7 @@
   margin: 20px auto; 
   padding: 40px; 
   border-radius: 8px; 
-  background-color: rgba(142, 122, 255, 0.593); 
+  background-color: #001F3F; 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
@@ -84,13 +84,13 @@
 
 @media (max-width: 600px) {
   .row {
-    grid-template-columns: 1fr; /* Stack columns on small screens */
+    grid-template-columns: 1fr; 
   }
   
   .formControl, 
   .date, 
   .button {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%; 
     margin-bottom: 10px; 
   }
 }

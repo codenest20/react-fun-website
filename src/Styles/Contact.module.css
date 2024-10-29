@@ -1,5 +1,6 @@
 :root{
   --main-color : rgb(128, 0, 255);
+  --container : #001F3F;
 }
 
 /* General Container Styles */
@@ -14,7 +15,7 @@
 /* Hero Section Styles */
 .heroSection {
   text-align: center;
-  background-color: #2c3e50;
+  background-color: var(--container);
   padding: 60px 20px;
   border-radius: 10px;
   margin-bottom: 40px;

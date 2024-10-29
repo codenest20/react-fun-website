@@ -1,9 +1,15 @@
+$container-color : #001F3F;
+
+
 .privacy-page {
   padding: 2rem;
   font-family: 'Helvetica Neue', sans-serif;
   color: #f0f0f0;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
+  background-color: $container-color;
+  border-radius: 10px;
+
 
   h2 {
     font-size: 2.8rem;
