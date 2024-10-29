@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import "../NavBar/Navbar.css";
+import "../NavBar/Navbar.scss";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import {  useState } from "react";
@@ -10,7 +10,10 @@ import Sorting from "../Sorting/Sorting";
 function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAscending , isClickedOrder,setIsClickedOrder}) {
   let navigate = useNavigate();
 
+  let [isCountryPage , setIsCountryPage] = useState(false)
+
   const handleLogout = () => {
+    setIsCountryPage(false)
     setIsLogin(false); 
     navigate("/"); 
   };
@@ -20,6 +23,19 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
   }
   localStorage.setItem("darkMode",JSON.stringify(isDark))
 
+  let displaySortingDarkMode =()=>{
+      setIsCountryPage(true)
+  }
+
+  let otherPageSortingHandler = ()=>{
+    setIsCountryPage(false)
+  }
+
+  let navigateToLogin = ()=>{
+    setIsCountryPage(false)
+    navigate("/signup")
+  }
+
   return (
     <nav className="navbar">
       <ul className="nav-list">
@@ -27,6 +43,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           <NavLink
             to="/"
             className={(e) => (e.isActive ? "active-link" : null)}
+            onClick={otherPageSortingHandler}
           >
             Home
           </NavLink>
@@ -35,6 +52,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           <NavLink
             to="/about"
             className={(e) => (e.isActive ? "active-link" : null)}
+            onClick={otherPageSortingHandler}
           >
             About
           </NavLink>
@@ -43,6 +61,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           <NavLink
             to="/services"
             className={(e) => (e.isActive ? "active-link" : null)}
+            onClick={otherPageSortingHandler}
           >
             Services
           </NavLink>
@@ -51,6 +70,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           <NavLink
             to="/contact"
             className={(e) => (e.isActive ? "active-link" : null)}
+            onClick={otherPageSortingHandler}
           >
             Contact
           </NavLink>
@@ -59,6 +79,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           <NavLink
             to="/toolbox"
             className={(e) => (e.isActive ? "active-link" : null)}
+            onClick={otherPageSortingHandler}
           >
             Toolbox
           </NavLink>
@@ -67,6 +88,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           <NavLink
             to="/country"
             className={(e) => (e.isActive ? "active-link" : null)}
+            onClick={displaySortingDarkMode}
           >
             Country Details
           </NavLink>
@@ -82,7 +104,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
             <li>
               <button
                 className="signup-link"
-                onClick={() => navigate("/signup")}
+                onClick={navigateToLogin}
               >
                 Signup
               </button>
@@ -95,13 +117,17 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           </>
         )}
       </ul>
-      <Sorting isAscending={isAscending} setIsAscending={setIsAscending} isClickedOrder={isClickedOrder} setIsClickedOrder={setIsClickedOrder} />
+      {
+        isCountryPage && <>
+        <Sorting isAscending={isAscending} setIsAscending={setIsAscending} isClickedOrder={isClickedOrder} setIsClickedOrder={setIsClickedOrder} />
       <button className="dark-mode-btn" onClick={handleMode}>
       {isDark ? <FaSun className="icon-size" />
         : <FaMoon className="icon-size" />}
         
         {isDark ? "Light Mode" : "Dark Mode"}
       </button>
+        </>
+      }
     </nav>
   );
 }
