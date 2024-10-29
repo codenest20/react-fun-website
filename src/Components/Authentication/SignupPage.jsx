@@ -3,36 +3,41 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Css/SignupPage.scss";
 
-const keyName = "signupData";
+// Local storage key
+const STORAGE_KEY = "signupData";
 
 const SignupPage = () => {
   const navigate = useNavigate();
 
-  const initialData = {
+  // Initial form data state
+  const [inputData, setInputData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
     password: "",
     confirmPassword: "",
-  };
+  });
 
-  const [inputData, setInputData] = useState(initialData);
   const [totalData, setTotalData] = useState(
-    JSON.parse(localStorage.getItem(keyName)) || []
+    JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
   );
 
-  const handleInput = (event) => {
+  // Handle form field input changes
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setInputData((prev) => ({ ...prev, [name]: value }));
+    setInputData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const validateInput = () => {
+  // Form validation
+  const validateForm = () => {
     const { firstName, lastName, email, password, confirmPassword } = inputData;
+
     if (!firstName || !lastName || !email || !password) {
       toast.error("All fields are required.");
       return false;
     }
+
     if (password !== confirmPassword) {
       toast.error("Passwords do not match.", {
         position: "bottom-right",
@@ -40,52 +45,53 @@ const SignupPage = () => {
       });
       return false;
     }
+
     return true;
   };
 
-  const saveToLocalStorage = (data) => {
-    localStorage.setItem(keyName, JSON.stringify(data));
+  // Save data to local storage
+  const saveData = (data) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     setTotalData(data);
   };
 
-  const signupClick = (e) => {
+  // Handle form submission
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateInput()) {
+
+    if (validateForm()) {
       const updatedData = [...totalData, inputData];
-      saveToLocalStorage(updatedData);
-      toast.success("Registration Successful");
+      saveData(updatedData);
+      toast.success("Registration successful!");
       navigate("/login");
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-full bg-gray-100 p-8" id="signup-page">
-      <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-center mb-4 text-purple-600 text-2xl font-bold">Create Your Account</h1>
-        <form onSubmit={signupClick}>
+    <div className="signup-page">
+      <div className="signup-container">
+        <h1>Create Your Account</h1>
+        <form onSubmit={handleSubmit}>
           {Object.entries(inputData).map(([key, value]) => (
-            <div className="mb-3" key={key}>
+            <div className="input-group" key={key}>
               <input
                 type={key.includes("password") ? "password" : "text"}
                 name={key}
                 id={key}
                 value={value}
                 placeholder={`Enter ${key.replace(/([A-Z])/g, " $1")}`}
-                onChange={handleInput}
+                onChange={handleInputChange}
                 required
-                className="w-full h-10 px-3 border-2 border-gray-300 rounded focus:outline-none focus:border-purple-600 text-center signup-input"
+                className="signup-input"
               />
             </div>
           ))}
-          <button
-            type="submit"
-            className="w-full py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition duration-300 button"
-          >
+          <button type="submit" className="signup-button">
             Sign Up
           </button>
-          <div className="flex justify-center mt-4">
-            <p>Already Have an Account?</p>
-            <Link className="ml-1 text-blue-500 font-bold" to="/login">
+          <div className="login-prompt">
+            <p>Already have an account?</p>
+            <Link className="login-link" to="/login">
               Login
             </Link>
           </div>

@@ -1,95 +1,60 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../NavBar/Navbar.scss";
-import { FaSun } from "react-icons/fa";
-import { FaMoon } from "react-icons/fa";
-import {  useState } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import Sorting from "../Sorting/Sorting";
 
-
-
-function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAscending , isClickedOrder,setIsClickedOrder}) {
-  let navigate = useNavigate();
-
-  let [isCountryPage , setIsCountryPage] = useState(false)
+function Navbar({ isLogin, setIsLogin, isDark, setIsDark, isAscending, setIsAscending, isClickedOrder, setIsClickedOrder }) {
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
-    setIsCountryPage(false)
     setIsLogin(false); 
     navigate("/"); 
   };
   
-  let handleMode = ()=>{
-    setIsDark(!isDark)
-  }
-  localStorage.setItem("darkMode",JSON.stringify(isDark))
+  const handleMode = () => {
+    setIsDark(!isDark);
+    localStorage.setItem("darkMode", JSON.stringify(!isDark));
+  };
 
-  let displaySortingDarkMode =()=>{
-      setIsCountryPage(true)
-  }
+  const navigateToLogin = () => {
+    navigate("/signup");
+  };
 
-  let otherPageSortingHandler = ()=>{
-    setIsCountryPage(false)
-  }
-
-  let navigateToLogin = ()=>{
-    setIsCountryPage(false)
-    navigate("/signup")
-  }
+  
+  const isCountryPage = location.pathname === "/country";
 
   return (
     <nav className="navbar">
       <ul className="nav-list">
         <li>
-          <NavLink
-            to="/"
-            className={(e) => (e.isActive ? "active-link" : null)}
-            onClick={otherPageSortingHandler}
-          >
+          <NavLink to="/" className={(e) => (e.isActive ? "active-link" : null)}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/about"
-            className={(e) => (e.isActive ? "active-link" : null)}
-            onClick={otherPageSortingHandler}
-          >
+          <NavLink to="/about" className={(e) => (e.isActive ? "active-link" : null)}>
             About
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/services"
-            className={(e) => (e.isActive ? "active-link" : null)}
-            onClick={otherPageSortingHandler}
-          >
+          <NavLink to="/services" className={(e) => (e.isActive ? "active-link" : null)}>
             Services
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/contact"
-            className={(e) => (e.isActive ? "active-link" : null)}
-            onClick={otherPageSortingHandler}
-          >
+          <NavLink to="/contact" className={(e) => (e.isActive ? "active-link" : null)}>
             Contact
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/toolbox"
-            className={(e) => (e.isActive ? "active-link" : null)}
-            onClick={otherPageSortingHandler}
-          >
+          <NavLink to="/toolbox" className={(e) => (e.isActive ? "active-link" : null)}>
             Toolbox
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/country"
-            className={(e) => (e.isActive ? "active-link" : null)}
-            onClick={displaySortingDarkMode}
-          >
+          <NavLink to="/country" className={(e) => (e.isActive ? "active-link" : null)}>
             Country Details
           </NavLink>
         </li>
@@ -102,10 +67,7 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
         ) : (
           <>
             <li>
-              <button
-                className="signup-link"
-                onClick={navigateToLogin}
-              >
+              <button className="signup-link" onClick={navigateToLogin}>
                 Signup
               </button>
             </li>
@@ -117,17 +79,20 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
           </>
         )}
       </ul>
-      {
-        isCountryPage && <>
-        <Sorting isAscending={isAscending} setIsAscending={setIsAscending} isClickedOrder={isClickedOrder} setIsClickedOrder={setIsClickedOrder} />
-      <button className="dark-mode-btn" onClick={handleMode}>
-      {isDark ? <FaSun className="icon-size" />
-        : <FaMoon className="icon-size" />}
-        
-        {isDark ? "Light Mode" : "Dark Mode"}
-      </button>
+      {isCountryPage && (
+        <>
+          <Sorting 
+            isAscending={isAscending} 
+            setIsAscending={setIsAscending} 
+            isClickedOrder={isClickedOrder} 
+            setIsClickedOrder={setIsClickedOrder} 
+          />
+          <button className="dark-mode-btn" onClick={handleMode}>
+            {isDark ? <FaSun className="icon-size" /> : <FaMoon className="icon-size" />}
+            {isDark ? "Light Mode" : "Dark Mode"}
+          </button>
         </>
-      }
+      )}
     </nav>
   );
 }

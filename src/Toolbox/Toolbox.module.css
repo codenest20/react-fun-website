@@ -1,20 +1,11 @@
-/* Toolbox.module.css */
-
 .toolboxContainer {
   padding: 2rem;
-  background-color: #1e1e33;
+  background-color: #7695FF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-}
-
-.toolboxTitle {
-  font-size: 2.5rem;
-  color: white;
-  font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 .toolsSection {
@@ -46,7 +37,7 @@
 
 .toolCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(128, 0, 255, 0.6), 0 0 40px rgba(128, 0, 255, 0.6);
 }
 
 .toolTitle {

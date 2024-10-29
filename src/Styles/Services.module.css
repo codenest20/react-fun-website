@@ -1,4 +1,8 @@
-/* General Container Styles */
+
+:root{
+  --container : #001F3F;
+}
+
 .servicesContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,10 +11,9 @@
   color: #333;
 }
 
-/* Hero Section Styles */
 .heroSection {
   text-align: center;
-  background: linear-gradient(to right, #2c3e50, #34495e);
+  background: var(--container);
   padding: 60px 20px;
   border-radius: 10px;
   margin-bottom: 40px;

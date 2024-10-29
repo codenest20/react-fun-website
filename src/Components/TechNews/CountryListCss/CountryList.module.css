@@ -1,16 +1,18 @@
 /* CountryList.module.css */
 
 :root{
-  --background-color : white;
+  --background-color : #7695FF;
   --text-color : #333;
   --semi-text-color : #666;
   --shimmer-container-bg : #f9f9f9;
 
-  --background-color-dark :  rgb(12, 12, 57);
+  --background-color-dark :  #001F3F;
   --box-shadow-dark : rgba(255, 255, 255, 0.447);
   --dark-mode-text-color: white;
   --dark-mode-semi-text-color: rgba(255, 255, 255, 0.6);
+
 }
+
 
 .main-container {
   width: 90%;
