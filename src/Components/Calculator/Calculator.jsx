@@ -57,7 +57,7 @@ export default function Calculator() {
 
   return (
     <>
-      <center><h1 className="title-name">ujjwal calculator</h1></center>
+      <center><h1 className="title-name">codenest calculator</h1></center>
       <div className="main-container">
         <input type="text" value={finalResult()} readOnly />
 
