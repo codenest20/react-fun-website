@@ -1,36 +1,43 @@
-/* General Container Styles */
+:root {
+  --container: #001F3F;
+}
+
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #333;
 }
 
-/* Hero Section Styles */
 .hero-section {
   text-align: center;
-  background-color: #f0f4f8;
+  background: var(--container);
   padding: 60px 20px;
   border-radius: 10px;
   margin-bottom: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(128, 0, 255, 0.6);
 }
 
 .hero-section h1 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: white;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+
 }
 
 .hero-section p {
-  font-size: 18px;
+  font-size: 29px;
   margin-bottom: 30px;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: white;
+  text-align: center;
 }
 
-/* Call-to-Action Button */
 .cta-button {
-  background-color: #3498db;
+  background-color: rgb(128, 0, 255);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -41,14 +48,9 @@
 }
 
 .cta-button:hover {
-  background-color: #2980b9;
+  background-color: rgb(97, 17, 178);
 }
 
-.hero-section > h1{
-  color: white;
-}
-
-/* Features Section Styles */
 .features-section {
   text-align: center;
   margin-bottom: 60px;
@@ -56,7 +58,7 @@
 
 .features-section h2 {
   font-size: 30px;
-  color: white;
+  color: #2c3e50;
   margin-bottom: 20px;
 }
 
@@ -64,10 +66,9 @@
   font-size: 18px;
   margin-bottom: 40px;
   line-height: 1.6;
-  color: white;
+  color: #34495e;
 }
 
-/* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -99,33 +100,28 @@
   line-height: 1.5;
 }
 
-/* Call-to-Action Section Styles */
 .cta-section {
   text-align: center;
-  background-color: #ecf0f1;
-  padding: 50px 20px;
-  border-radius: 10px;
+  margin: 60px 0;
 }
 
 .cta-section h2 {
-  font-size: 28px;
-  color: #2c3e50;
+  font-size: 30px;
+  color: #161D6F;
   margin-bottom: 20px;
 }
 
 .cta-section p {
-  font-size: 18px;
-  margin-bottom: 30px;
+  font-size: 19px;
   line-height: 1.6;
+  color: #161D6F ;
+  margin-bottom: 30px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .hero-section, .cta-section {
-    padding: 40px 20px;
-  }
-
-  .cta-button {
-    width: 100%;
-  }
+#offer-text {
+  font-weight: bold;
+  font-size: 40px;
+  display: inline-block; 
+  border-bottom: 2px solid #161D6F; 
+  padding-bottom: 5px; 
 }

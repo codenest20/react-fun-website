@@ -1,33 +1,29 @@
 import { useNavigate } from "react-router-dom";
-import "../../Styles/About.css"
+import "../../Styles/About.css";
 import useTitle from "../../Hooks/useTitle/useTitle";
-
 
 export default function About() {
   const navigate = useNavigate();
-  useTitle("CODENEST | Title")
+  useTitle("CODENEST | About");
 
   return (
     <div className="about-container">
-      {/* Hero Section */}
+      
       <section className="hero-section">
         <h1>About Us</h1>
         <p>
-          Welcome to our company! <br></br>We are dedicated to providing top-notch services and innovative solutions to help you
-          succeed. <br></br>Whether you're looking for resources, support, or expertise, we've got you covered.
+          Welcome to our company! <br />
+          We are dedicated to providing top-notch services and innovative solutions to help you succeed. 
+          Whether you're looking for resources, support, or expertise, we've got you covered.
         </p>
         <button className="cta-button" onClick={() => navigate("/about")}>
-         Learn More
+          Learn More
         </button>
       </section>
 
-      {/* Features Section */}
+      
       <section className="features-section">
-        <h2>What We Offer</h2>
-        <p>
-          Our platform is designed with a variety of features to ensure you have everything you need to reach your
-          goals. Here’s what makes us stand out:
-        </p>
+        <h2 id="offer-text">What We Offer</h2>
         <div className="features-grid">
           <div className="feature-item">
             <h3>Innovative Solutions</h3>
@@ -53,7 +49,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      
       <section className="cta-section">
         <h2>Ready to Get Started?</h2>
         <p>

@@ -92,6 +92,16 @@
   color: #161D6F;
 }
 
+
+#offer-text {
+  font-weight: bold;
+  font-size: 40px;
+  display: inline-block; 
+  border-bottom: 3px solid #161D6F;
+  padding-bottom: 5px; 
+}
+
+
 .imgContainer {
   position: relative;
   width: 100%;
