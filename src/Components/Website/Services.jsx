@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import styles from '../../Styles/Services.module.css';
-import image1 from "../../assets/imagesServices/image1.jpeg"
-import image2 from "../../assets/imagesServices/image2.jpg"
-import image3 from "../../assets/imagesServices/image3.webp"
+import image1 from "../../assets/imagesServices/image1.jpeg";
+import image2 from "../../assets/imagesServices/image2.jpg";
+import image3 from "../../assets/imagesServices/image3.webp";
 import useTitle from "../../Hooks/useTitle/useTitle";
 
 export default function Services() {
   const navigate = useNavigate();
-  useTitle("CODENEST | Services")
+  useTitle("CODENEST | Services");
 
   return (
     <div className={styles.servicesContainer}>
-      {/* Hero Section */}
       <section className={styles.heroSection}>
         <h1>Our Comprehensive Services</h1>
         <p>
@@ -23,18 +22,14 @@ export default function Services() {
         </button>
       </section>
 
-      {/* Features Section */}
       <section className={styles.featuresSection}>
-        <h2>What We Offer</h2>
-        <p>
-          Our extensive range of services is crafted to empower you and help you achieve your goals effectively. 
-          Here’s how we can assist you:
-        </p>
+        <h2 className={styles.boldText}>What We Offer</h2>
         <div className={styles.featuresGrid}>
           <div className={styles.featureItem}>
-            <h3>Consulting Services</h3>
-            <div className={styles["img-container"]} >
-            <img src={image1} alt="consulting-services-image" className={styles["image"]} />
+            <h3 className={styles.boldText}>Consulting Services</h3>
+            <div className={styles.imgContainer}>
+              <img src={image1} alt="consulting-services-image" className={styles.image} />
+              <div className={styles.textOverlay}>Expert insights for your success</div>
             </div>
             <p>
               Our expert consultants deliver valuable insights and strategies, guiding you through complex challenges 
@@ -42,9 +37,10 @@ export default function Services() {
             </p>
           </div>
           <div className={styles.featureItem}>
-            <h3>Product Development</h3>
-            <div className={styles["img-container"]} >
-            <img src={image2} alt="product-development-image" className={styles["image"]} />
+            <h3 className={styles.boldText}>Product Development</h3>
+            <div className={styles.imgContainer}>
+              <img src={image2} alt="product-development-image" className={styles.image} />
+              <div className={styles.textOverlay}>Innovative solutions for your needs</div>
             </div>
             <p>
               We specialize in crafting innovative products tailored to your specifications, ensuring quality and 
@@ -52,9 +48,10 @@ export default function Services() {
             </p>
           </div>
           <div className={styles.featureItem}>
-            <h3>Customer Support</h3>
-            <div className={styles["img-container"]} >
-            <img src={image3} alt="customer-support-image"  className={styles["image"]}/>
+            <h3 className={styles.boldText}>Customer Support</h3>
+            <div className={styles.imgContainer}>
+              <img src={image3} alt="customer-support-image" className={styles.image} />
+              <div className={styles.textOverlay}>Dedicated service for satisfaction</div>
             </div>
             <p>
               Our dedicated support team is committed to providing exceptional service, ensuring a seamless and 
