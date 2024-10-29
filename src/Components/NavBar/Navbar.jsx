@@ -11,8 +11,8 @@ function Navbar({ isLogin, setIsLogin ,isDark , setIsDark ,isAscending,setIsAsce
   let navigate = useNavigate();
 
   const handleLogout = () => {
-    setIsLogin(false); // Update the login state
-    navigate("/"); // Navigate to logout page or homepage
+    setIsLogin(false); 
+    navigate("/"); 
   };
   
   let handleMode = ()=>{
