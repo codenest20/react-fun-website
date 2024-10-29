@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "../../Styles/About.css"
+import useTitle from "../../Hooks/useTitle/useTitle";
 
 
 export default function About() {
   const navigate = useNavigate();
+  useTitle("CODENEST | Title")
 
   return (
     <div className="about-container">

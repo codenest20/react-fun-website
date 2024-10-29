@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import styles from "../../Styles/Contact.module.css";
 import GoogleMap from "../GoogleMap/GoogleMap";
+import useTitle from "../../Hooks/useTitle/useTitle";
 
 export default function Contact() {
   const navigate = useNavigate();
+  useTitle("CODENEST | Contact")
 
   return (
     <div className={styles.contactContainer}>
