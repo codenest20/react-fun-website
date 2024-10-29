@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./Css/SignupPage.scss";
 
 const keyName = "signupData";
 
@@ -58,7 +59,7 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-full bg-gray-100 p-8">
+    <div className="flex justify-center items-center h-screen w-full bg-gray-100 p-8" id="signup-page">
       <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-md">
         <h1 className="text-center mb-4 text-purple-600 text-2xl font-bold">Create Your Account</h1>
         <form onSubmit={signupClick}>
@@ -72,13 +73,13 @@ const SignupPage = () => {
                 placeholder={`Enter ${key.replace(/([A-Z])/g, " $1")}`}
                 onChange={handleInput}
                 required
-                className="w-full h-10 px-3 border-2 border-gray-300 rounded focus:outline-none focus:border-purple-600 text-center"
+                className="w-full h-10 px-3 border-2 border-gray-300 rounded focus:outline-none focus:border-purple-600 text-center signup-input"
               />
             </div>
           ))}
           <button
             type="submit"
-            className="w-full py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition duration-300"
+            className="w-full py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition duration-300 button"
           >
             Sign Up
           </button>
