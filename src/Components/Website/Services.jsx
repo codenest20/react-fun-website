@@ -3,9 +3,11 @@ import styles from '../../Styles/Services.module.css';
 import image1 from "../../assets/imagesServices/image1.jpeg"
 import image2 from "../../assets/imagesServices/image2.jpg"
 import image3 from "../../assets/imagesServices/image3.webp"
+import useTitle from "../../Hooks/useTitle/useTitle";
 
 export default function Services() {
   const navigate = useNavigate();
+  useTitle("CODENEST | Services")
 
   return (
     <div className={styles.servicesContainer}>
