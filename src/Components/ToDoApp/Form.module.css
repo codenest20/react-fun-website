@@ -1,16 +1,18 @@
 .container {
   max-width: 80%; 
-  height: auto; 
+  height: auto;
+  height: 100%; 
   margin: 20px auto; 
   padding: 40px; 
   border-radius: 8px; 
-  background-color: #ffffff; 
+  background-color: rgba(142, 122, 255, 0.593); 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .main-container{
-  height: 70vh;
+  height: 100vh !important;
   width: 100vw;
+  margin-bottom: 50px;
 }
 
 
@@ -91,4 +93,14 @@
     width: 100%; /* Full width on smaller screens */
     margin-bottom: 10px; 
   }
+}
+
+.formControl{
+  height: 50px !important;
+  font-size: 20px !important;
+  text-align: center !important;
+}
+
+.date{
+  height: 50px !important;
 }
