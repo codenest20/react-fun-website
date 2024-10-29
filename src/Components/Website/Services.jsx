@@ -15,7 +15,7 @@ export default function Services() {
       <section className={styles.heroSection}>
         <h1>Our Comprehensive Services</h1>
         <p>
-          At [Your Company Name], we are dedicated to providing exceptional services tailored to your specific needs. 
+          At CODENEST, we are dedicated to providing exceptional services tailored to your specific needs. 
           Explore our offerings designed to elevate your experience and drive success.
         </p>
         <button className={styles.ctaButton} onClick={() => navigate("/about")}>
