@@ -61,6 +61,13 @@ export default function Toolbox() {
           clickBtn={() => navigate("/rock-scissor-paper")} 
         />
 
+        <ToolboxContainer
+          title="Random Number Guess Game"
+          desc="You can Play Random Number Guess game"
+          btnName="Open Random Number Guess game"
+          clickBtn={() => navigate("/randomnumberguess")} 
+        />
+
 
       </div>
     </div>
