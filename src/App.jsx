@@ -25,6 +25,7 @@ import PDFConverter from "./Components/PdfConverter/PDFConverter";
 import Form from "./Components/ToDoApp/Form";
 import PasswordGenerator from "./Components/PasswordGenerator/PasswordGenerator";
 import RockScissorPaper from "./Components/RockScissorPaper/RockScissorPaper";
+import RandomNumberGuess from "./Components/RandomNumberGuess/RandomNumberGuess";
 
 export const myContext = createContext();
 
@@ -144,6 +145,10 @@ function App() {
         {
           path : "rock-scissor-paper",
           element : <RockScissorPaper />,
+        },
+        {
+          path : "randomnumberguess",
+          element : <RandomNumberGuess />,
         },
         {
           path: "*",
