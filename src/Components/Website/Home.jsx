@@ -4,7 +4,7 @@ import useTitle from "../../Hooks/useTitle/useTitle";
 
 export default function Home() {
   const navigate = useNavigate();
-  useTitle("CODENEST | Home")
+  useTitle("CODENEST | Home");
 
   return (
     <div className="home-container">
@@ -21,9 +21,18 @@ export default function Home() {
       <div className="features-section">
         <h3>Our Features</h3>
         <div className="features-grid">
-          <FeatureItem title="Feature 1" description="Experience our powerful feature to enhance productivity." />
-          <FeatureItem title="Feature 2" description="Explore tools designed to streamline your work." />
-          <FeatureItem title="Feature 3" description="Leverage tailored solutions to meet your unique needs." />
+          <FeatureItem
+            title="Feature 1"
+            description="Experience our powerful feature to enhance productivity."
+          />
+          <FeatureItem
+            title="Feature 2"
+            description="Explore tools designed to streamline your work."
+          />
+          <FeatureItem
+            title="Feature 3"
+            description="Leverage tailored solutions to meet your unique needs."
+          />
         </div>
       </div>
     </div>
